@@ -1,0 +1,32 @@
+extends ./layout/index
+
+block slider
+  .slider
+    h1 Rio de Janeiro
+    em aventura
+
+block content
+  main.container.mt-5
+    h2.text-center.mb-5 Sobre Nosotros
+    .row
+      .col-md-6
+        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vehicula feugiat elit, lacinia laoreet mauris aliquet sed. Fusce auctor non odio non cursus. Integer malesuada risus accumsan, mollis enim in, hendrerit erat. Duis finibus mi ut turpis fringilla aliquam a sed orci. Suspendisse ac vestibulum libero, in tincidunt dui.
+        p Donec condimentum fringilla ante vel pellentesque. Aenean semper diam et tempus molestie. Ut nec pretium metus. Nulla facilisi. Etiam egestas velit mollis fringilla feugiat. Praesent mattis, eros sed tincidunt blandit, dui lectus hendrerit erat, id dignissim magna sem a velit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+      .col-md-6
+        img(src="img/inicio_nosotros.jpg", alt="Nosotros", class="img-fluid")
+
+    include ./layout/bloque_viajes
+
+  .descuento
+    .container
+      .row
+        .col-md-6
+          .contenido
+            h3 5% de descuento
+            p.titulo Viaje a Canada
+            p.fecha 12 de Diciembre del 2023 - 20 de Enero del 2024
+            p.precio Desde $1,000 USD
+
+  .container
+    h2.mt-5.text-center Testimoniales
+    include ./layout/bloque_testimoniales

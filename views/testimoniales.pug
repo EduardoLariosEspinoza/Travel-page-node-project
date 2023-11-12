@@ -1,0 +1,28 @@
+extends ./layout/index
+
+block content
+  main.container.mt-5
+    h1.text-center.mt-5 #{pagina}
+    blockquote.text-center Lee sobre lo que nuestros clientes opinan de nosotros
+      include ./layout/bloque_testimoniales
+    .row
+      .col-md-12
+        h2.d-block.w-100.text-center Agrega un testimonial
+        if(errores)
+          each error in errores
+            .alert.col.text-center.alert-danger(role="alert") #{error.mensaje}
+      .row.justify-content-center.col
+        .col-md-8
+          form(action="/testimoniales" method="POST")
+            .form-group
+              // El label se ancla con un for al id del input
+              label(for='text') Nombre
+              input#nombre(type="text", placeholder="Tu nombre", class="form-control", name="nombre", value= nombre)
+            .form-group
+              label(for='correo') Correo
+              input#correo(type="correo", placeholder="Tu correo", class="form-control", name="correo", value= correo)
+            .form-group
+              label(for='mensaje') Mensaje
+              textarea#mensaje(class="form-control", placeholder="Tu mensaje", name="mensaje", rows="3")= mensaje
+
+            input.btn.btn-success.btn-block(type="submit", value="Agregar")
