@@ -10,7 +10,7 @@ const db = new Sequelize(process.env.DATABASE_URL, {
     timestamps: false, // Para que no agregue los campos de fecha de creacion y actualizacion
   },
   pool: {
-    max: 5, // Maximo de conexiones
+    max: 25, // Maximo de conexiones
     min: 0, // Minimo de conexiones
     acquire: 30000, // Tiempo maximo de adquisicion de una conexion
     idle: 10000, // Tiempo maximo de inactividad de una conexion
